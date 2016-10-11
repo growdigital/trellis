@@ -3,14 +3,58 @@
 # Define accompanying passwords/secrets in group_vars/production/vault.yml
 
 wordpress_sites:
-  example.com:
+  forestgardener:
     site_hosts:
-      - canonical: example.com
+      - canonical: forestgardener.org.uk
         redirects:
-          - www.example.com
-    local_path: ../site # path targeting local Bedrock site directory (relative to Ansible root)
-    repo: git@github.com:example/example.com.git # replace with your Git repo URL
-    repo_subtree_path: site # relative path to your Bedrock/WP directory in your repo
+          - www.forestgardener.org.uk
+    local_path: ../forestgardener
+    repo: git@github.com:growdigital/bedrock-forestgardener.git
+    branch: master
+    multisite:
+      enabled: false
+    ssl:
+      enabled: false
+      provider: letsencrypt
+    cache:
+      enabled: false
+  growdigital:
+    site_hosts:
+      - canonical: growdigital.org.uk
+        redirects:
+          - www.growdigital.org.uk
+    local_path: ../growdigital
+    repo: git@github.com:growdigital/bedrock-growdigital.git
+    branch: master
+    multisite:
+      enabled: false
+    ssl:
+      enabled: false
+      provider: letsencrypt
+    cache:
+      enabled: false
+  growspace:
+    site_hosts:
+      - canonical: growspace.org.uk
+        redirects:
+          - www.growspace.org.uk
+    local_path: ../growspace
+    repo: git@github.com:growdigital/bedrock-growspace.git
+    branch: master
+    multisite:
+      enabled: false
+    ssl:
+      enabled: false
+      provider: letsencrypt
+    cache:
+      enabled: false
+  ysgoltrewen:
+    site_hosts:
+      - canonical: ysgoltrewen.uk
+        redirects:
+          - www.ysgoltrewen.uk
+    local_path: ../ysgoltrewen
+    repo: git@github.com:growdigital/bedrock-ysgoltrewen.git
     branch: master
     multisite:
       enabled: false

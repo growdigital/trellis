@@ -3,17 +3,51 @@
 # Define accompanying passwords/secrets in group_vars/development/vault.yml
 
 wordpress_sites:
-  example.com:
+  forestgardener:
     site_hosts:
-      - canonical: example.dev
-        redirects:
-          - www.example.dev
-    local_path: ../site # path targeting local Bedrock site directory (relative to Ansible root)
-    admin_email: admin@example.dev
+      - canonical: forestgardener.dev
+    local_path: ../forestgardener # path targeting local Bedrock site directory (relative to Ansible root)
+    admin_user: admin
+    admin_email: contact@growdigital.org
     multisite:
       enabled: false
     ssl:
       enabled: false
-      provider: self-signed
+    cache:
+      enabled: false
+  growdigital:
+    site_hosts:
+      - canonical: growdigital.dev
+    local_path: ../growdigital # path targeting local Bedrock site directory (relative to Ansible root)
+    admin_user: admin
+    admin_email: contact@growdigital.org
+    multisite:
+      enabled: false
+    ssl:
+      enabled: false
+    cache:
+      enabled: false
+  growspace:
+    site_hosts:
+      - canonical: growspace.dev
+    local_path: ../growspace # path targeting local Bedrock site directory (relative to Ansible root)
+    admin_user: admin
+    admin_email: contact@growdigital.org
+    multisite:
+      enabled: false
+    ssl:
+      enabled: false
+    cache:
+      enabled: false
+  ysgoltrewen:
+    site_hosts:
+      - canonical: ysgoltrewen.dev
+    local_path: ../ysgoltrewen # path targeting local Bedrock site directory (relative to Ansible root)
+    admin_user: admin
+    admin_email: contact@growdigital.org
+    multisite:
+      enabled: false
+    ssl:
+      enabled: false
     cache:
       enabled: false
